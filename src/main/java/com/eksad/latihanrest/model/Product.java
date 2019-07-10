@@ -17,6 +17,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
  //many to one karena ada brand ada produk. satu brand punya lebih dari satu produk. dan diliat dari sisi prpduk, jadinya pake many to one
@@ -28,7 +29,7 @@ import lombok.Data;
 public class Product {
 	
 	@Id
-	
+	@ApiModelProperty(value = "Product ID (Primary Key)")
 	//konsep sequence : kyk counter di database. 
 	//jd initinya mau update data ke databasae berdasarkan disesuaikan product_id yg sudah ada di database
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_id")
@@ -51,9 +52,11 @@ public class Product {
 	private Long brandId;
 //------------------	
 	@Column(nullable = false)
+	@ApiModelProperty(value = "Product's Name")
 	private String name;
 	
 	@Column(nullable = false)
+	@ApiModelProperty(value = "Product's Price")
 	private BigDecimal price ; //jangan pake double, tp pake bigdecimal. karna uang/harga pakenya bigdecimal aja
 	
 	

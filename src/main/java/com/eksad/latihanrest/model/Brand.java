@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -37,6 +38,7 @@ public class Brand extends BaseEntity {
 
 //2-------------------------------------------------------------------------------
 	@Column(nullable = false)
+	@ApiModelProperty(value = "Brand's Name")
 	private String name;
 
 	@Column(name = "product_type")
